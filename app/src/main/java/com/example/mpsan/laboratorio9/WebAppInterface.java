@@ -1,5 +1,6 @@
 package com.example.mpsan.laboratorio9;
 
+import android.app.Activity;
 import android.content.Context;
 import android.webkit.JavascriptInterface;
 import android.widget.Toast;
@@ -18,5 +19,10 @@ public class WebAppInterface {
     @JavascriptInterface
     public void showToast(String toast) {
         Toast.makeText(mContext, toast, Toast.LENGTH_SHORT).show();
+    }
+    @JavascriptInterface
+    public void onFinish(){
+        Activity activity = (Activity) mContext;
+        activity.finish();
     }
 }
